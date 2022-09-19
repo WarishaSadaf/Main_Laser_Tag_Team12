@@ -42,6 +42,7 @@ public class HelloController {
     }
     public void switchToScene1(ActionEvent event) throws IOException
     {
+        //Add comment here
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
