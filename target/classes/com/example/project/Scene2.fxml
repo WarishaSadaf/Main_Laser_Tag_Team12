@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.HelloController">
+   <top>
+      <MenuBar prefHeight="0.0" prefWidth="583.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #BBBDB5;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="37.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F1 Edit Game" />
+            <Text layoutX="176.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F2 Game Parameters" />
+            <Text layoutX="394.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F3 Start Game" />
+            <Text layoutX="569.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F1 PreEntered Games" />
+            <Text layoutX="1145.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F12 Clear Game" />
+            <Text layoutX="798.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F10 Flick Sync" />
+            <Text layoutX="979.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F8 View Game" />
+         </children>
+      </Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="682.0" prefWidth="1280.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#f8f7f7" layoutX="471.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Current Game" textAlignment="CENTER" wrappingWidth="337.3076171875">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <GridPane gridLinesVisible="true" layoutX="250.0" layoutY="113.0" prefHeight="493.0" prefWidth="290.0" style="-fx-background-color: #000000; -fx-border-color: red;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="118.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="0.0" prefWidth="120.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="143.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <TextField GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField GridPane.rowIndex="8" />
+                  <TextField GridPane.rowIndex="9" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+               </children>
+            </GridPane>
+            <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="24.0" prefWidth="119.0" text="Return" />
+            <Button layoutX="1147.0" layoutY="681.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="119.0" text="Continue" />
+            <GridPane gridLinesVisible="true" layoutX="766.0" layoutY="113.0" prefHeight="493.0" prefWidth="290.0" style="-fx-background-color: #000000; -fx-border-color: green;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="143.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="0.0" prefWidth="145.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="143.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <TextField GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField GridPane.rowIndex="8" />
+                  <TextField GridPane.rowIndex="9" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>
