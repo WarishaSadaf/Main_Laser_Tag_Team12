@@ -24,7 +24,7 @@ public class HelloPreloader extends Preloader {
 
     @Override
     public void init() throws Exception {
-        Parent root1 = FXMLLoader.load(getClass().getResource("splash_hello-view.fxml"));
+        Parent root1 = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         scene = new Scene(root1);
     }
 
@@ -33,7 +33,7 @@ public class HelloPreloader extends Preloader {
         this.preloaderStage = stage;
         //Set preloader scene and show stage
         preloaderStage.setScene(scene);
-        preloaderStage.initStyle(StageStyle.UNDECORATED);
+        preloaderStage.initStyle(StageStyle.DECORATED);
         preloaderStage.show();
     }
 
