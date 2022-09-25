@@ -15,7 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController implements Initializable {
+public class HelloController implements Initializable 
+{
 
     private Stage stage;
 
@@ -28,49 +29,22 @@ public class HelloController implements Initializable {
     public static Label label;
 
     @FXML
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
     public static ProgressBar statProgressBar;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        ProgressBar progressBar = new ProgressBar(0.0);
         label = progress;
         statProgressBar = progressBar;
     }
 
-    public HelloController() {
-    }
-
-    @FXML
-    public void switchToScene2(ActionEvent event) throws IOException
+    public HelloController() 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-
-        stage.setScene(scene);
-
-        stage.show();
-
+        
     }
-    public void switchToScene1(ActionEvent event) throws IOException
-    {
-        //Add a comment here
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-
-        stage.setScene(scene);
-
-        stage.show();
-
-    }
-    public void closeGame(ActionEvent event) throws IOException
-    {
-        System.exit(0);
-    }
+    
 
 }
