@@ -9,8 +9,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloApplication extends Application {
-    private static final int COUNT = 10;
+public class HelloApplication extends Application 
+{
+    private static final int COUNT_LIMIT = 10;
     @Override
     public void start(Stage stage) throws IOException
     {
@@ -24,13 +25,14 @@ public class HelloApplication extends Application {
     }
 
     @Override
-    public void init() throws Exception{
-        for(int i =0; i<COUNT; i++){
-            double progress = (double) (i)/COUNT;
-            System.out.println("Progress: " + progress);
+    public void init() throws Exception
+    {
+        for (int i = 0; i < COUNT_LIMIT; i++)
+        {
+            double progress = (double) (i) / COUNT_LIMIT;
+            //System.out.println("Progress: " + progress);
             notifyPreloader(new Preloader.ProgressNotification(progress));
             Thread.sleep(300);
-
         }
     }
 
