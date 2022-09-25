@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
    <top>
       <MenuBar prefHeight="0.0" prefWidth="583.0" BorderPane.alignment="CENTER">
         <menus>
@@ -37,15 +37,15 @@
       </MenuBar>
    </top>
    <bottom>
-      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #BBBDB5;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #3128c2;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="37.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F1 Edit Game" />
-            <Text layoutX="176.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F2 Game Parameters" />
-            <Text layoutX="394.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F3 Start Game" />
-            <Text layoutX="569.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F1 PreEntered Games" />
-            <Text layoutX="1145.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F12 Clear Game" />
-            <Text layoutX="798.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F10 Flick Sync" />
-            <Text layoutX="979.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F8 View Game" />
+            <Button layoutX="30.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditGame" prefHeight="24.0" prefWidth="119.0" text="F1 Edit Game" />
+            <Button layoutX="191.0" layoutY="15.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="163.0" text="F2 Game Parameters" />
+            <Button layoutX="1103.0" layoutY="14.0" mnemonicParsing="false" onAction="#ClearGame" prefHeight="24.0" prefWidth="146.0" text="F12 Clear Game" />
+            <Button layoutX="940.0" layoutY="15.0" mnemonicParsing="false" onAction="#ViewGame" prefHeight="24.0" prefWidth="119.0" text="F8 View Game" />
+            <Button layoutX="772.0" layoutY="15.0" mnemonicParsing="false" onAction="#FlickSync" prefHeight="24.0" prefWidth="119.0" text="F10 Flick Sync" />
+            <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#PreEnteredGames" text="F4 PreEntered Games" />
+            <Button layoutX="599.0" layoutY="14.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="119.0" text="F3 Start Game" />
          </children>
       </Pane>
    </bottom>
@@ -57,8 +57,9 @@
                   <Font size="27.0" />
                </font>
             </Text>
-            <GridPane gridLinesVisible="true" layoutX="250.0" layoutY="113.0" prefHeight="493.0" prefWidth="290.0" style="-fx-background-color: #000000; -fx-border-color: red;">
+            <GridPane gridLinesVisible="true" layoutX="182.0" layoutY="145.0" prefHeight="493.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-border-color: red;">
                <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="118.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="118.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="0.0" prefWidth="120.0" />
                </columnConstraints>
@@ -75,32 +76,31 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="143.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
-                  <TextField GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="154.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="9" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
                </children>
             </GridPane>
-            <Button layoutX="14.0" layoutY="681.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="24.0" prefWidth="119.0" text="Return" />
-            <Button layoutX="1147.0" layoutY="681.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="119.0" text="Continue" />
-            <GridPane gridLinesVisible="true" layoutX="766.0" layoutY="113.0" prefHeight="493.0" prefWidth="290.0" style="-fx-background-color: #000000; -fx-border-color: green;">
+            <GridPane gridLinesVisible="true" layoutX="698.0" layoutY="145.0" prefHeight="493.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-border-color: green;">
                <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="143.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="143.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="0.0" prefWidth="145.0" />
                </columnConstraints>
@@ -117,28 +117,38 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="143.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
-                  <TextField GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="400.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="9" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
                </children>
             </GridPane>
+            <Text fill="#f8f7f7" layoutX="213.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Red Team" textAlignment="CENTER" wrappingWidth="337.3076171875">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#f8f7f7" layoutX="729.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green Team" textAlignment="CENTER" wrappingWidth="337.3076171875">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </right>
