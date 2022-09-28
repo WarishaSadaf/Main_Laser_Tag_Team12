@@ -9,18 +9,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloApplication extends Application 
+public class HelloApplication extends Application
 {
     private static final int COUNT_LIMIT = 10;
     @Override
     public void start(Stage stage) throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
-        //stage.setOpacity();
         stage.show();
     }
 

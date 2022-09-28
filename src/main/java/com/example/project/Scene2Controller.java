@@ -28,14 +28,21 @@ public class Scene2Controller {
 
     @FXML
 
-
-
     public void EditGame (ActionEvent event) throws IOException
     {
 
     }
     public void StartGame (ActionEvent event) throws IOException
     {
+        System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());
+
+        Parent root = FXMLLoader.load(getClass().getResource("GameAction.fxml"));
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        scene = new Scene(root);
+
+        stage.setScene(scene);
 
     }
     public void ViewGame (ActionEvent event) throws IOException
