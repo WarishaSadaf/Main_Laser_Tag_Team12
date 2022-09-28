@@ -1,5 +1,5 @@
 package com.example.project;
-import java.util.*;
+
 import java.lang.*;
 import javafx.application.Application;
 import javafx.application.Preloader;
@@ -11,6 +11,8 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     private static final int COUNT = 10;
+
+
     @Override
     public void start(Stage stage) throws IOException
     {
@@ -19,7 +21,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        //stage.setOpacity();
         stage.show();
     }
 
@@ -33,6 +34,7 @@ public class HelloApplication extends Application {
 
         }
     }
+
 
 
     public static void main(String[] args)

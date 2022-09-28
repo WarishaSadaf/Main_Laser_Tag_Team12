@@ -54,20 +54,7 @@ public class HelloController implements Initializable {
         stage.show();
 
     }
-    public void switchToScene1(ActionEvent event) throws IOException
-    {
-        //Add a comment here
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-
-        stage.setScene(scene);
-
-        stage.show();
-
-    }
     public void closeGame(ActionEvent event) throws IOException
     {
         System.exit(0);
