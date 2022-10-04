@@ -80,32 +80,33 @@
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="154.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
-                  <TextField GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField fx:id="red_id1" GridPane.rowIndex="1" />
-                  <TextField fx:id="red_name1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="red_id2" GridPane.rowIndex="2" />
-                  <TextField fx:id="red_name2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="red_id3" GridPane.rowIndex="3" />
-                  <TextField fx:id="red_name3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="red_id4" GridPane.rowIndex="4" />
-                  <TextField fx:id="red_name4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="5" />
+                  <TextField text="1" GridPane.rowIndex="1" />
+                  <TextField text="2" GridPane.rowIndex="2" />
+                  <TextField text="3" GridPane.rowIndex="3" />
+                  <TextField text="4" GridPane.rowIndex="4" />
+                  <TextField fx:id="red_id1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="red_name1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="red_id2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="red_name2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="red_id3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="red_name3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="red_id4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="red_name4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="9" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField text="5" GridPane.rowIndex="5" />
+                  <TextField text="6" GridPane.rowIndex="6" />
+                  <TextField text="7" GridPane.rowIndex="7" />
+                  <TextField text="8" GridPane.rowIndex="8" />
+                  <TextField text="9" GridPane.rowIndex="9" />
                </children>
             </GridPane>
             <GridPane gridLinesVisible="true" layoutX="698.0" layoutY="145.0" prefHeight="493.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-border-color: green;">

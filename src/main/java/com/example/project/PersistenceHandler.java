@@ -12,11 +12,11 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
 
     //Database Connection details
     //private String url = "localhost";
-    private String url = "ec2-54-147-36-107.compute-1.amazonaws.com";
-    private final String username = "dspssnbvycuijo";
-    private final String password = "9a16154741e5bcd0cd1d30db6f682ee0a696467eb62cc6004e5a5f1fa1ab3123";
+    private String url = "ec2-54-174-31-7.compute-1.amazonaws.com";
+    private final String username = "inambnipuqgeeb";
+    private final String password = "32f4a6737e7836883af199972e5730472321154383d0561466908eefac20d063";
     private int port = 5432;
-    private String databaseName = "dcb2582rruc9sg";
+    private String databaseName = "dc62tnlursroj2";
 
     private Connection connection = null;
 
