@@ -34,16 +34,17 @@ public class HelloController implements Initializable
     }
     @FXML
     public Label progress;
+
     public static Label label;
 
     @FXML
-//    private ProgressBar progressBar;
+    public ProgressBar progressBar;
+
     public static ProgressBar statProgressBar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        ProgressBar progressBar = new ProgressBar(0.0);
         label = progress;
         statProgressBar = progressBar;
     }

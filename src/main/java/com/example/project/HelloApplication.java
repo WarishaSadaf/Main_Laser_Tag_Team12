@@ -30,7 +30,6 @@ public class HelloApplication extends Application
         for (int i = 0; i < COUNT_LIMIT; i++)
         {
             double progress = (double) (i) / COUNT_LIMIT;
-            //System.out.println("Progress: " + progress);
             notifyPreloader(new Preloader.ProgressNotification(progress));
             Thread.sleep(300);
         }
