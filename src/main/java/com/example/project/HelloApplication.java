@@ -1,4 +1,5 @@
 package com.example.project;
+
 import java.lang.*;
 import javafx.application.Application;
 import javafx.application.Preloader;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 public class HelloApplication extends Application
 {
     private static final int COUNT_LIMIT = 10;
+
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -28,12 +30,12 @@ public class HelloApplication extends Application
         for (int i = 0; i < COUNT_LIMIT; i++)
         {
             double progress = (double) (i) / COUNT_LIMIT;
-            //System.out.println("Progress: " + progress);
             notifyPreloader(new Preloader.ProgressNotification(progress));
             Thread.sleep(300);
         }
 
     }
+
 
     public static void main(String[] args)
     {

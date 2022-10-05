@@ -29,7 +29,7 @@ public class HelloPreloader extends Preloader {
     public void handleApplicationNotification(Preloader.PreloaderNotification info) {
         //bar.setProgress(pn.getProgress());
         if(info instanceof ProgressNotification){
-            HelloController.label.setText("Loading....."+((ProgressNotification)info).getProgress()*100 + "%");
+            HelloController.label.setText("Loading..."+((ProgressNotification)info).getProgress()*100 + "%");
             System.out.println("Value@ :"+ (((ProgressNotification) info).getProgress()));
             HelloController.statProgressBar.setProgress(((ProgressNotification)info).getProgress());
 
