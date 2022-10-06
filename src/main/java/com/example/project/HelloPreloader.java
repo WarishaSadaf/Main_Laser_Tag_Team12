@@ -1,3 +1,8 @@
+/*
+       This class works on the preloader bar
+       and allows the preloading scene to wait for certain amount of time until the game starts.
+ */
+
 package com.example.project;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +34,7 @@ public class HelloPreloader extends Preloader {
     public void handleApplicationNotification(Preloader.PreloaderNotification info) {
         //bar.setProgress(pn.getProgress());
         if(info instanceof ProgressNotification){
-            HelloController.label.setText("Loading....."+((ProgressNotification)info).getProgress()*100 + "%");
+            HelloController.label.setText(" Game Loading....."+((ProgressNotification)info).getProgress()*100 + "%");
             System.out.println("Value@ :"+ (((ProgressNotification) info).getProgress()));
             HelloController.statProgressBar.setProgress(((ProgressNotification)info).getProgress());
 

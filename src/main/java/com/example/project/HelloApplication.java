@@ -1,3 +1,7 @@
+/*
+    This is the main class that starts the whole game.
+ */
+
 package com.example.project;
 import java.lang.*;
 import javafx.application.Application;
@@ -35,6 +39,8 @@ public class HelloApplication extends Application
 
     }
 
+
+    // main that get called first  everytime we run the code
     public static void main(String[] args)
     {
 
