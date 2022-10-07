@@ -1,3 +1,10 @@
+/*
+    This is the main class that starts the whole game.
+    Hello application calls other classes for game to run.
+    when you run the game you will need to run the hello application for the whole game to run
+ */
+
+// Importing packages
 package com.example.project;
 
 import java.lang.*;
@@ -24,6 +31,7 @@ public class HelloApplication extends Application
         stage.show();
     }
 
+    // Calling the preloader class for the preloader bar
     @Override
     public void init() throws Exception
     {
@@ -37,6 +45,7 @@ public class HelloApplication extends Application
     }
 
 
+// the main method calling the preloader
     public static void main(String[] args)
     {
 

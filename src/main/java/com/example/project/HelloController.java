@@ -1,3 +1,7 @@
+/*
+    This is the first controller that control the hello application
+ */
+
 package com.example.project;
 import java.net.URL;
 import java.util.*;
