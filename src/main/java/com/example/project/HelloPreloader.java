@@ -1,8 +1,11 @@
 /*
        This class works on the preloader bar
-       and allows the preloading scene to wait for certain amount of time until the game starts.
+       and allows the preloading scene to wait for
+       certain amount of time until the game starts.
+       when you run the hello preloader by itself it won't open the game.
  */
 
+// Imported packages
 package com.example.project;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
