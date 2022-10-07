@@ -1,3 +1,9 @@
+/*
+* Overview: implementation for the Player class. This class is used to
+*           initialize and retrieve a player's object information (i.e. player ID and name).
+* @version 1.0
+* @since 09/09/22
+* */
 package com.example.project;
 
 public class Player

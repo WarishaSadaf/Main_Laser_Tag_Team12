@@ -1,3 +1,11 @@
+/*
+ * Overview: Implementation for the Persistence Handler class. Handles
+ *           database connections and manages the flow of data in the Java application.
+
+ * @version 1.0
+ * @since 09/09/22
+ * */
+
 package com.example.project;
 
 import com.example.project.Player;
@@ -10,8 +18,8 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
 
     private static PersistenceHandler instance;
 
-    //Database Connection details
-    //private String url = "localhost";
+    //Database Credentials/Connection details
+
     private String url = "ec2-54-174-31-7.compute-1.amazonaws.com";
     private final String username = "inambnipuqgeeb";
     private final String password = "32f4a6737e7836883af199972e5730472321154383d0561466908eefac20d063";
@@ -31,6 +39,10 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         return instance;
     }
 
+/*
+ * Initializes data base connection
+ */
+
     private void initializePostgresqlDatabase() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -45,6 +57,11 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         }
     }
 
+    /*
+     * Retrieves a player's data from database
+     * @return a String containing the player's name and ID
+     * @return NULL if no record found
+     */
     @Override
     //public List<Player> getPlayers() {
     public String getPlayers() {
@@ -64,6 +81,12 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         return null;
     }
 
+    /*
+     * Adds a player's data to database
+     * @param player The player object containing data to be stored
+     * @return FALSE if data insertion failed
+     * @return TRUE if data insertion was successful
+     */
     @Override
     public boolean createPlayer(Player player) {
         try {
