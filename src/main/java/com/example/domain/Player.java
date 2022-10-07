@@ -1,13 +1,7 @@
-/*
-* Overview: implementation for the Player class. This class is used to
-*           initialize and retrieve a player's object information (i.e. player ID and name).
-* @version 1.0
-* @since 09/09/22
-* */
-package com.example.project;
+package com.example.domain;
 
-public class Player
-{
+public class Player {
+
     private String id;
     private String codename;
 
@@ -29,3 +23,4 @@ public class Player
         return " with ID: " + id + " got codename: " + codename;
     }
 }
+
