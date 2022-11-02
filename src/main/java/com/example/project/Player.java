@@ -1,17 +1,20 @@
-/*
-* Overview: implementation for the Player class. This class is used to
-*           initialize and retrieve a player's object information (i.e. player ID and name).
-* @version 1.0
-* @since 09/09/22
-* */
 package com.example.project;
 
-public class Player
-{
-    private String id;
-    private String codename;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-    public Player(String id, String codename) {
+public class Player {
+
+    //private String id;
+    //private String codename;
+
+    private IntegerProperty id;
+    private StringProperty codename;
+
+
+    /*public Player(int id, String codename) {
         this.id = id;
         this.codename = codename;
     }
@@ -27,5 +30,31 @@ public class Player
     @Override
     public String toString() {
         return " with ID: " + id + " got codename: " + codename;
+    }*/
+    public Player() {
+        this.id = new SimpleIntegerProperty();
+        this.codename = new SimpleStringProperty();
+    }
+
+    //player_id
+    public int getId() {
+        return id.get();
+    }
+    public void setId(int id){
+        this.id.set(id);
+    }
+    public IntegerProperty idProperty(){
+        return id;
+    }
+    //Player_Codename
+    public String getCodename () {
+        return codename.get();
+    }
+    public void setCodename(String codename){
+        this.codename.set(codename);
+    }
+    public StringProperty codenameProperty() {
+        return codename;
     }
 }
+
