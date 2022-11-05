@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.GameActionController">
    <bottom>
       <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #3128c2;" BorderPane.alignment="CENTER">
          <children>
@@ -36,6 +32,17 @@
             </Pane>
             <Pane layoutX="448.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: green; -fx-border-radius: 30; -fx-border-width: 5;">
                <children>
+                  <TableView fx:id="GreenTeamTable" editable="true" layoutX="193.0" layoutY="102.0" prefHeight="234.0" prefWidth="393.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="greenIdColumn" prefWidth="57.0" text="Id" />
+                        <TableColumn fx:id="greenCodeNameColumn" prefWidth="75.0" text="Name" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="-8.0" layoutY="-6.0" text="Xp" textFill="WHITE">
+                     <font>
+                        <Font name="DejaVu Sans Bold" size="27.0" />
+                     </font>
+                  </Label>
                   <ImageView layoutX="72.0" layoutY="30.0">
                      <image>
                         <Image url="@Backgrounds/d0072a8e1fc29bc74f716d69d7a31ef1.png" />
@@ -45,6 +52,12 @@
             </Pane>
             <Pane layoutX="47.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: red; -fx-border-radius: 30; -fx-border-width: 5;">
                <children>
+                  <TableView fx:id="RedTeamTable" editable="true" layoutX="193.0" layoutY="102.0" prefHeight="234.0" prefWidth="393.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="redIdColumn" prefWidth="57.0" text="Id" />
+                        <TableColumn fx:id="redCodeNameColumn" prefWidth="75.0" text="Name" />
+                     </columns>
+                  </TableView>
                   <Label layoutX="-8.0" layoutY="-6.0" text="Xp" textFill="WHITE">
                      <font>
                         <Font name="DejaVu Sans Bold" size="27.0" />
@@ -55,6 +68,7 @@
                         <Image url="@Backgrounds/543c8811e88e3846aa213cada57c279a.png" />
                      </image>
                   </ImageView>
+
                </children>
             </Pane>
             <Label layoutX="391.0" layoutY="599.0" text="0:56" textFill="WHITE">

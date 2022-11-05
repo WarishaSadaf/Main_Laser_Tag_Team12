@@ -8,8 +8,8 @@
 
 package com.example.project;
 
-import com.example.project.Player;
-import com.example.project.PlayerPersistenceInterface;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 
@@ -26,7 +26,7 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
     private int port = 5432;
     private String databaseName = "dc62tnlursroj2";
 
-    private Connection connection = null;
+    private static Connection connection = null;
 
     private PersistenceHandler(){
         initializePostgresqlDatabase();
@@ -82,24 +82,115 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
     }
 
     /*
-     * Adds a player's data to database
+     * Adds a player's data to database in red_team Table
      * @param player The player object containing data to be stored
      * @return FALSE if data insertion failed
      * @return TRUE if data insertion was successful
      */
     @Override
-    public boolean createPlayer(Player player) {
+    public boolean createRedPlayer(Player player)  {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO player (id, codename) VALUES (?,?);");
-            insertStatement.setString(1, player.getId());
-            insertStatement.setString(2,player.getCodename());
+                    "INSERT INTO red_team (id, codename) VALUES (?,?);");
+                insertStatement.setInt(1, player.getId());
+                insertStatement.setString(2, player.getCodename());
+                insertStatement.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
+    /*
+     * Adds a player's data to database in green_team Table
+     * @param player The player object containing data to be stored
+     * @return FALSE if data insertion failed
+     * @return TRUE if data insertion was successful
+     */
+    @Override
+    public boolean createGreenPlayer(Player player)  {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT INTO green_team (id, codename) VALUES (?,?);");
+            insertStatement.setInt(1, player.getId());
+            insertStatement.setString(2, player.getCodename());
             insertStatement.execute();
         } catch (SQLException throwable) {
             throwable.printStackTrace();
             return false;
         }
         return true;
+    }
+
+
+
+    //Use ResultSet from DB as parameter and set Employee Object's attributes and return player object.
+    private static Player getPlayerFromResultSet(ResultSet rs) throws SQLException
+    {
+        Player player = null;
+        if (rs.next()) {
+            player = new Player();
+            player.setId(rs.getInt("id"));
+            player.setCodename(rs.getString("codename"));
+        }
+        return player;
+    }
+
+    //*************************************
+    //SELECT Players from red_team table
+    //************************************
+    public static ObservableList<Player> searchRedPlayers() throws SQLException, ClassNotFoundException {
+        //Execute SELECT statement
+        try {
+            PreparedStatement selectStatement = connection.prepareStatement(
+                    "SELECT * FROM red_team;");
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rsPlayers = selectStatement.executeQuery();
+            //Send ResultSet to the getEmployeeList method and get player object
+            ObservableList<Player> playerList = getPlayerList(rsPlayers);
+            //Return player object
+            return playerList;
+        } catch (SQLException e) {
+            System.out.println("SQL select operation has been failed: " + e);
+            //Return exception
+            throw e;
+        }
+    }
+
+
+    //************************************
+    // SELECT Players from green_team table
+    //************************************
+    public static ObservableList<Player> searchGreenPlayers() throws SQLException, ClassNotFoundException {
+        //Execute SELECT statement
+        try {
+            PreparedStatement selectStatement = connection.prepareStatement(
+                    "SELECT * FROM green_team;");
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rsPlayers = selectStatement.executeQuery();
+            //Send ResultSet to the getEmployeeList method and get player object
+            ObservableList<Player> playerList = getPlayerList(rsPlayers);
+            //Return player object
+            return playerList;
+        } catch (SQLException e) {
+            System.out.println("SQL select operation has been failed: " + e);
+            //Return exception
+            throw e;
+        }
+    }
+    //Select * from red_team operation
+    private static ObservableList<Player> getPlayerList(ResultSet rs) throws SQLException, ClassNotFoundException {
+        //Declare a observable List which comprises of Employee objects
+        ObservableList<Player> playerList = FXCollections.observableArrayList();
+        while (rs.next()) {
+            Player player = new Player();
+            player.setId(rs.getInt("id"));
+            player.setCodename(rs.getString("codename"));
+            //Add player to the ObservableList
+            playerList.add(player);
+        }
+        //return empList (ObservableList of Employees)
+        return playerList;
     }
 }
