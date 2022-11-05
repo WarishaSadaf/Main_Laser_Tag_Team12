@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< HEAD
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -21,15 +20,6 @@
 <BorderPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="597.0" prefWidth="1132.0" scaleShape="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.GameActionController">
    <left>
       <Pane prefHeight="553.0" prefWidth="542.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
-=======
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.GameActionController">
-   <bottom>
-      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #3128c2;" BorderPane.alignment="CENTER">
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
          <children>
             <ImageView fitHeight="598.0" fitWidth="1135.0" focusTraversable="true" layoutX="-1.0" nodeOrientation="INHERIT" pickOnBounds="true">
                <image>
@@ -102,73 +92,4 @@
          </children>
       </Pane>
    </bottom>
-<<<<<<< HEAD
-=======
-   <top>
-      <Pane prefHeight="682.0" prefWidth="1280.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
-         <children>
-            <Pane layoutX="829.0" layoutY="43.0" prefHeight="655.0" prefWidth="430.0" style="-fx-border-color: white; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <ImageView fitHeight="35.0" fitWidth="260.0" layoutX="96.0" layoutY="24.0">
-                     <image>
-                        <Image url="@Backgrounds/e8ca8da6a4912fc7e8b891190d32909e.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="448.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: green; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <TableView fx:id="GreenTeamTable" editable="true" layoutX="193.0" layoutY="102.0" prefHeight="234.0" prefWidth="393.0" tableMenuButtonVisible="true">
-                     <columns>
-                        <TableColumn fx:id="greenIdColumn" prefWidth="57.0" text="Id" />
-                        <TableColumn fx:id="greenCodeNameColumn" prefWidth="75.0" text="Name" />
-                     </columns>
-                  </TableView>
-                  <Label layoutX="-8.0" layoutY="-6.0" text="Xp" textFill="WHITE">
-                     <font>
-                        <Font name="DejaVu Sans Bold" size="27.0" />
-                     </font>
-                  </Label>
-                  <ImageView layoutX="72.0" layoutY="30.0">
-                     <image>
-                        <Image url="@Backgrounds/d0072a8e1fc29bc74f716d69d7a31ef1.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="47.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: red; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <TableView fx:id="RedTeamTable" editable="true" layoutX="193.0" layoutY="102.0" prefHeight="234.0" prefWidth="393.0" tableMenuButtonVisible="true">
-                     <columns>
-                        <TableColumn fx:id="redIdColumn" prefWidth="57.0" text="Id" />
-                        <TableColumn fx:id="redCodeNameColumn" prefWidth="75.0" text="Name" />
-                     </columns>
-                  </TableView>
-                  <Label layoutX="-8.0" layoutY="-6.0" text="Xp" textFill="WHITE">
-                     <font>
-                        <Font name="DejaVu Sans Bold" size="27.0" />
-                     </font>
-                  </Label>
-                  <ImageView layoutX="93.0" layoutY="28.0">
-                     <image>
-                        <Image url="@Backgrounds/543c8811e88e3846aa213cada57c279a.png" />
-                     </image>
-                  </ImageView>
-
-               </children>
-            </Pane>
-            <Label layoutX="391.0" layoutY="599.0" text="0:56" textFill="WHITE">
-               <font>
-                  <Font size="47.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="42.0" fitWidth="265.0" layoutX="96.0" layoutY="606.0">
-               <image>
-                  <Image url="@Backgrounds/7832e45018054b648cd4fbdc1fe860a2.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </top>
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
 </BorderPane>

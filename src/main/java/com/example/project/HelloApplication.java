@@ -29,7 +29,6 @@ public class HelloApplication extends Application
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     // Calling the preloader class for the preloader bar

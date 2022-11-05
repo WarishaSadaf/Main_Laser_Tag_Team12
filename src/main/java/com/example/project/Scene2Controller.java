@@ -33,19 +33,11 @@ public class Scene2Controller  implements Initializable
 
     @FXML
     private TextField red_id1, red_id2,red_id3,red_id4,red_id5,red_id6,red_id7,
-<<<<<<< HEAD
             red_id8,red_id9,red_id10,red_id11,red_id12,red_id13,red_id14, red_id15;
 
     @FXML
     private TextField red_name1,red_name2, red_name3, red_name4, red_name5,red_name6, red_name7, red_name8,
             red_name9, red_name10, red_name11, red_name12, red_name13, red_name14, red_name15;
-=======
-                        red_id8,red_id9,red_id10,red_id11,red_id12,red_id13,red_id14, red_id15;
-
-    @FXML
-    private TextField red_name1,red_name2, red_name3, red_name4, red_name5,red_name6, red_name7, red_name8,
-    red_name9, red_name10, red_name11, red_name12, red_name13, red_name14, red_name15;
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
 
     @FXML
     private TextField green_id1,green_id2,green_id3,green_id4,green_id5,green_id6,green_id7,
@@ -335,11 +327,7 @@ public class Scene2Controller  implements Initializable
                 red_player.setId(Integer.parseInt(entry.getKey()));
                 red_player.setCodename(entry.getValue());
                 //Calling createPlayer method to insert red team data to Database
-<<<<<<< HEAD
                 if (persistenceHandler.createRedPlayer(red_player)) {
-=======
-                    if (persistenceHandler.createRedPlayer(red_player)) {
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
                     System.out.println("Player inserted into database!!");
                 } else {
                     System.out.println("Error while inserting player into database!!");

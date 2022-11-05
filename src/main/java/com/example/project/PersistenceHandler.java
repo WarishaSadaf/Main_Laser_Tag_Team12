@@ -92,30 +92,6 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
                     "INSERT INTO red_team (id, codename) VALUES (?,?);");
-<<<<<<< HEAD
-=======
-                insertStatement.setInt(1, player.getId());
-                insertStatement.setString(2, player.getCodename());
-                insertStatement.execute();
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-            return false;
-        }
-        return true;
-    }
-
-    /*
-     * Adds a player's data to database in green_team Table
-     * @param player The player object containing data to be stored
-     * @return FALSE if data insertion failed
-     * @return TRUE if data insertion was successful
-     */
-    @Override
-    public boolean createGreenPlayer(Player player)  {
-        try {
-            PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO green_team (id, codename) VALUES (?,?);");
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
             insertStatement.setInt(1, player.getId());
             insertStatement.setString(2, player.getCodename());
             insertStatement.execute();
@@ -126,7 +102,6 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         return true;
     }
 
-<<<<<<< HEAD
     /*
      * Adds a player's data to database in green_team Table
      * @param player The player object containing data to be stored
@@ -148,8 +123,6 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         return true;
     }
 
-=======
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
 
 
     //Use ResultSet from DB as parameter and set Employee Object's attributes and return player object.
@@ -220,8 +193,4 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         //return empList (ObservableList of Employees)
         return playerList;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c

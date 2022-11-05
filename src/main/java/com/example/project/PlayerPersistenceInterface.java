@@ -30,8 +30,5 @@ public abstract class PlayerPersistenceInterface
          * @return FALSE if data insertion failed
          * @return TRUE if data insertion was successful
          */
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
