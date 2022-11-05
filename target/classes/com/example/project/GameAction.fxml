@@ -71,7 +71,7 @@
                </effect>
             </TableView>
             <Label fx:id="label" layoutX="188.0" layoutY="451.0" prefHeight="16.0" prefWidth="129.0" text="6:00" textFill="WHITE" />
-            <Text fill="WHITE" layoutX="103.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting In:" wrappingWidth="88.06591796875" />
+            <Text fill="WHITE" layoutX="103.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Time:" wrappingWidth="88.06591796875" />
          </children>
       </Pane>
    </left>
