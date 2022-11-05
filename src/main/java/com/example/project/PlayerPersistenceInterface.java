@@ -9,14 +9,25 @@
 
 package com.example.project;
 
-public class PlayerPersistenceInterface
+public abstract class PlayerPersistenceInterface
 {
 
         public String getPlayers() {
                 return null;
         }
 
-        public boolean createPlayer(Player player) {
+        public boolean createRedPlayer(Player player) {
                 return false;
         }
+
+        public boolean createGreenPlayer(Player player) {
+                return false;
+        }
+
+        /*
+         * Adds a player's data to database
+         * @param player The player object containing data to be stored
+         * @return FALSE if data insertion failed
+         * @return TRUE if data insertion was successful
+         */
 }

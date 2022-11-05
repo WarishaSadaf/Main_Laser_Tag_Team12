@@ -2,72 +2,94 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
-   <bottom>
-      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #3128c2;" BorderPane.alignment="CENTER">
+<BorderPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="597.0" prefWidth="1132.0" scaleShape="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.GameActionController">
+   <left>
+      <Pane prefHeight="553.0" prefWidth="542.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="30.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditGame" prefHeight="24.0" prefWidth="119.0" text="F1 Edit Game" />
-            <Button layoutX="191.0" layoutY="15.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="163.0" text="F2 Game Parameters" />
-            <Button layoutX="1103.0" layoutY="14.0" mnemonicParsing="false" onAction="#ClearGame" prefHeight="24.0" prefWidth="146.0" text="F12 Clear Game" />
-            <Button layoutX="940.0" layoutY="15.0" mnemonicParsing="false" onAction="#ViewGame" prefHeight="24.0" prefWidth="119.0" text="F8 View Game" />
-            <Button layoutX="772.0" layoutY="15.0" mnemonicParsing="false" onAction="#FlickSync" prefHeight="24.0" prefWidth="119.0" text="F10 Flick Sync" />
-            <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#PreEnteredGames" text="F4 PreEntered Games" />
-            <Button layoutX="599.0" layoutY="14.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="119.0" text="F3 Start Game" />
+            <ImageView fitHeight="598.0" fitWidth="1135.0" focusTraversable="true" layoutX="-1.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@Backgrounds/HUD_FRAME.png" />
+               </image>
+               <effect>
+                  <Glow level="0.48">
+                     <input>
+                        <DisplacementMap>
+                           <mapData>
+                              <FloatMap />
+                           </mapData>
+                        </DisplacementMap>
+                     </input>
+                  </Glow>
+               </effect>
+            </ImageView>
+            <TableView fx:id="RedTeamTable" layoutX="103.0" layoutY="188.0" prefHeight="245.0" prefWidth="298.0" stylesheets="@stylesheet.css">
+               <columns>
+                  <TableColumn fx:id="redIdColumn" editable="false" minWidth="0.0" prefWidth="63.33331298828125" sortable="false" text="id" />
+                  <TableColumn fx:id="redCodeNameColumn" editable="false" minWidth="0.0" prefWidth="224.66671752929688" sortable="false" text="Red Team" />
+               </columns>
+            </TableView>
+            <TableView fx:id="GreenTeamTable" layoutX="787.0" layoutY="186.0" prefHeight="245.0" prefWidth="298.0" stylesheets="@greenTeamStyle.css">
+               <columns>
+                  <TableColumn fx:id="greenIdColumn" editable="false" minWidth="7.3333740234375" prefWidth="72.6666259765625" sortable="false" text="id" />
+                  <TableColumn fx:id="greenCodeNameColumn" editable="false" minWidth="7.3333740234375" prefWidth="216.0001220703125" sortable="false" text="Green Team" />
+               </columns>
+            </TableView>
+            <Label id="top-label" layoutX="366.0" layoutY="46.0" stylesheets="@paneStyleSheet.css" text="Laser Tag System" textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.04" height="5.84" radius="2.3175" width="5.43">
+                     <color>
+                        <Color red="0.048875000327825546" green="0.008500000461935997" blue="0.17000000178813934" opacity="0.9010152220726013" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Label>
+            <TableView layoutX="446.0" layoutY="187.0" prefHeight="272.0" prefWidth="266.0" stylesheets="@paneStyleSheet.css">
+               <columns>
+                  <TableColumn prefWidth="265.9999694824219" text="LOG" />
+               </columns>
+               <effect>
+                  <Lighting diffuseConstant="1.52" light="$null" specularConstant="0.08" specularExponent="13.89" surfaceScale="0.66">
+                     <bumpInput>
+                        <InnerShadow blurType="GAUSSIAN" choke="0.09" height="69.66499999999999" radius="39.19875" width="89.13" />
+                     </bumpInput>
+                  </Lighting>
+               </effect>
+            </TableView>
+            <Label fx:id="label" layoutX="188.0" layoutY="451.0" prefHeight="16.0" prefWidth="129.0" text="6:00" textFill="WHITE" />
+            <Text fill="WHITE" layoutX="103.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Time:" wrappingWidth="88.06591796875" />
+         </children>
+      </Pane>
+   </left>
+   <bottom>
+      <Pane prefHeight="72.0" prefWidth="1135.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="35.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" stylesheets="@buttonStyleSheet.css" text="Edit Game F1" textFill="WHITE">
+               <font>
+                  <Font name="Monospaced Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="161.0" layoutY="17.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="163.0" stylesheets="@buttonStyleSheet.css" text="F2 Game Parameters" />
+            <Button layoutX="954.0" layoutY="19.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="146.0" stylesheets="@buttonStyleSheet.css" text="F12 Clear Game" />
+            <Button layoutX="815.0" layoutY="18.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F8 View Game" />
+            <Button layoutX="672.0" layoutY="18.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F10 Flick Sync" />
+            <Button layoutX="342.0" layoutY="17.0" mnemonicParsing="false" stylesheets="@buttonStyleSheet.css" text="F4 PreEntered Games" />
+            <Button layoutX="512.0" layoutY="18.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="134.0" stylesheets="@buttonStyleSheet.css" text="Start Game ENTER" />
          </children>
       </Pane>
    </bottom>
-   <top>
-      <Pane prefHeight="682.0" prefWidth="1280.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
-         <children>
-            <Pane layoutX="829.0" layoutY="43.0" prefHeight="655.0" prefWidth="430.0" style="-fx-border-color: white; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <ImageView fitHeight="35.0" fitWidth="260.0" layoutX="96.0" layoutY="24.0">
-                     <image>
-                        <Image url="@Backgrounds/e8ca8da6a4912fc7e8b891190d32909e.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="448.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: green; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <ImageView layoutX="72.0" layoutY="30.0">
-                     <image>
-                        <Image url="@Backgrounds/d0072a8e1fc29bc74f716d69d7a31ef1.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="47.0" layoutY="43.0" prefHeight="474.0" prefWidth="340.0" style="-fx-border-color: red; -fx-border-radius: 30; -fx-border-width: 5;">
-               <children>
-                  <Label layoutX="-8.0" layoutY="-6.0" text="Xp" textFill="WHITE">
-                     <font>
-                        <Font name="DejaVu Sans Bold" size="27.0" />
-                     </font>
-                  </Label>
-                  <ImageView layoutX="93.0" layoutY="28.0">
-                     <image>
-                        <Image url="@Backgrounds/543c8811e88e3846aa213cada57c279a.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Label layoutX="391.0" layoutY="599.0" text="0:56" textFill="WHITE">
-               <font>
-                  <Font size="47.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="42.0" fitWidth="265.0" layoutX="96.0" layoutY="606.0">
-               <image>
-                  <Image url="@Backgrounds/7832e45018054b648cd4fbdc1fe860a2.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </top>
 </BorderPane>

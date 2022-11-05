@@ -45,7 +45,7 @@ public class HelloApplication extends Application
     }
 
 
-// the main method calling the preloader
+    // the main method calling the preloader
     public static void main(String[] args)
     {
 

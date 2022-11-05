@@ -1,0 +1,73 @@
+@font-face {
+  src: url('UnitedKingdom-GwAD.ttf');
+}
+
+.table-view
+{
+-fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+   -fx-opacity: 85%;
+  -fx-background-radius: 7px 7px 0px 0px;
+  -fx-background-insets: 0 11px 0 0;
+  -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header{
+     -fx-background-color: transparent;
+
+ }
+
+
+
+.table-view .column-header-background{
+    -fx-background-color: Green;
+
+    -fx-opacity: 80%;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-family: "United Kingdom";
+
+    -fx-text-fill: white;
+    -fx-font-size:  15 em;
+}
+
+
+.table-view .table-cell{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-family: "United Kingdom";
+    -fx-text-fill: white;
+    -fx-font-size:  10 em;
+    -fx-alignment: center;
+
+}
+
+.table-row-cell: odd{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell: even{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-padding: 0.0em;
+}
+

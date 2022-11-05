@@ -23,4 +23,3 @@ public class Player {
         return " with ID: " + id + " got codename: " + codename;
     }
 }
-

@@ -20,7 +20,7 @@ public class PersistenceHandler implements PlayerPersistenceInterface {
     private String databaseName = "dcb2582rruc9sg";
 
     private Connection connection = null;
-    
+
     private PersistenceHandler(){
         initializePostgresqlDatabase();
     }
@@ -49,9 +49,9 @@ public class PersistenceHandler implements PlayerPersistenceInterface {
     @Override
     //public List<Player> getPlayers() {
     public String getPlayers() {
-            String sql = "SELECT id, codename "
-                    + "FROM player "
-                    + "WHERE id = ?";
+        String sql = "SELECT id, codename "
+                + "FROM player "
+                + "WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet sqlReturnValues = stmt.executeQuery();

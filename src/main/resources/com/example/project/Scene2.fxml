@@ -6,6 +6,13 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,10 +20,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.paint.Color?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="1141.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
    <top>
       <MenuBar prefHeight="0.0" prefWidth="583.0" BorderPane.alignment="CENTER">
          <menus>
@@ -39,136 +45,218 @@
       </MenuBar>
    </top>
    <bottom>
-      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #3128c2;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="54.0" prefWidth="1280.0" style="-fx-background-color: #090a0c;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="30.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditGame" prefHeight="24.0" prefWidth="119.0" text="F1 Edit Game" />
-            <Button layoutX="191.0" layoutY="15.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="163.0" text="F2 Game Parameters" />
-            <Button layoutX="1103.0" layoutY="14.0" mnemonicParsing="false" onAction="#ClearGame" prefHeight="24.0" prefWidth="146.0" text="F12 Clear Game" />
-            <Button layoutX="940.0" layoutY="15.0" mnemonicParsing="false" onAction="#ViewGame" prefHeight="24.0" prefWidth="119.0" text="F8 View Game" />
-            <Button layoutX="772.0" layoutY="15.0" mnemonicParsing="false" onAction="#FlickSync" prefHeight="24.0" prefWidth="119.0" text="F10 Flick Sync" />
-            <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#PreEnteredGames" text="F4 PreEntered Games" />
-            <Button layoutX="599.0" layoutY="14.0" mnemonicParsing="false" onAction="#addContinue" prefHeight="24.0" prefWidth="119.0" text="F3 Start Game" />
+            <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditGame" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F1 Edit Game" />
+            <Button layoutX="181.0" layoutY="15.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="24.0" prefWidth="163.0" stylesheets="@buttonStyleSheet.css" text="F2 Game Parameters" />
+            <Button layoutX="970.0" layoutY="14.0" mnemonicParsing="false" onAction="#ClearGame" prefHeight="24.0" prefWidth="146.0" stylesheets="@buttonStyleSheet.css" text="F12 Clear Game" />
+            <Button layoutX="830.0" layoutY="15.0" mnemonicParsing="false" onAction="#ViewGame" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F8 View Game" />
+            <Button layoutX="697.0" layoutY="15.0" mnemonicParsing="false" onAction="#FlickSync" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F10 Flick Sync" />
+            <Button layoutX="359.0" layoutY="14.0" mnemonicParsing="false" onAction="#PreEnteredGames" stylesheets="@buttonStyleSheet.css" text="F4 PreEntered Games" />
+            <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#addContinue" prefHeight="24.0" prefWidth="139.0" stylesheets="@buttonStyleSheet.css" text="Start Game ENTER" />
          </children>
       </Pane>
    </bottom>
    <center>
       <Pane prefHeight="682.0" prefWidth="1280.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="#f8f7f7" layoutX="471.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Current Game" textAlignment="CENTER" wrappingWidth="337.3076171875">
-               <font>
-                  <Font size="27.0" />
-               </font>
-            </Text>
-            <GridPane gridLinesVisible="true" layoutX="182.0" layoutY="145.0" prefHeight="493.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-border-color: red;">
+            <ImageView fitHeight="542.0" fitWidth="1152.0" layoutX="-2.0" layoutY="-25.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Backgrounds/HUD_FRAME.png" />
+               </image>
+               <effect>
+                  <Glow level="0.12">
+                     <input>
+                        <DisplacementMap>
+                           <mapData>
+                              <FloatMap />
+                           </mapData>
+                        </DisplacementMap>
+                     </input>
+                  </Glow>
+               </effect>
+            </ImageView>
+            <GridPane gridLinesVisible="true" layoutX="268.0" layoutY="107.0" prefHeight="376.0" prefWidth="195.0" styleClass="grid-pane" stylesheets="@paneStyleSheet.css">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="118.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="118.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="0.0" prefWidth="120.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="41.333353678385414" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="49.666646321614586" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.66668701171875" minWidth="0.0" prefWidth="117.66668701171875" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="33.66668701171875" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="26.999979654947907" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="25.333358764648438" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="154.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
-                  <TextField text="1" GridPane.rowIndex="1" />
-                  <TextField text="2" GridPane.rowIndex="2" />
-                  <TextField text="3" GridPane.rowIndex="3" />
-                  <TextField text="4" GridPane.rowIndex="4" />
-                  <TextField fx:id="red_id1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="red_name1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="red_id2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="red_name2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <TextField fx:id="red_id3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="red_name3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <TextField fx:id="red_id4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField fx:id="red_name4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <TextField text="5" GridPane.rowIndex="5" />
-                  <TextField text="6" GridPane.rowIndex="6" />
-                  <TextField text="7" GridPane.rowIndex="7" />
-                  <TextField text="8" GridPane.rowIndex="8" />
-                  <TextField text="9" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="154.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="1" GridPane.rowIndex="1" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="2" GridPane.rowIndex="2" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="3" GridPane.rowIndex="3" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="4" GridPane.rowIndex="4" />
+                  <TextField fx:id="red_id1" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="red_name1" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="red_id2" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="red_name2" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="red_id3" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="red_name3" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="red_id4" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="red_name4" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="red_id5" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="red_name5" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <TextField fx:id="red_name6" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="red_id6" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="red_name7" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField fx:id="red_id7" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="red_id8" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="red_name8" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField fx:id="red_name9" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <TextField fx:id="red_id9" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="red_id10" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="red_name10" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <TextField fx:id="red_id11" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="red_name11" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <TextField fx:id="red_id12" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="red_name12" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <TextField fx:id="red_id13" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <TextField fx:id="red_name13" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <TextField fx:id="red_id14" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <TextField fx:id="red_name14" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <TextField fx:id="red_id15" promptText="Enter Only Numeric Values!" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <TextField fx:id="red_name15" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="5" GridPane.rowIndex="5" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="6" GridPane.rowIndex="6" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="7" GridPane.rowIndex="7" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="8" GridPane.rowIndex="8" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="9" GridPane.rowIndex="9" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="10" GridPane.rowIndex="10" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="11" GridPane.rowIndex="11" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="12" GridPane.rowIndex="12" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="13" GridPane.rowIndex="13" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="14" GridPane.rowIndex="14" />
+                  <TextField editable="false" style="-fx-background-color: transparent; -fx-alignment: center; -fx-font-family: monospaced; -fx-font-weight: bold;" text="15" GridPane.rowIndex="15" />
                </children>
             </GridPane>
-            <GridPane gridLinesVisible="true" layoutX="698.0" layoutY="145.0" prefHeight="493.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-border-color: green;">
+            <GridPane gridLinesVisible="true" layoutX="690.0" layoutY="107.0" prefHeight="377.0" prefWidth="194.0" styleClass="grid-pane" stylesheets="@paneStyleSheet.css">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="143.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="143.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="0.0" prefWidth="145.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="34.666646321614586" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="51.333333333333336" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0000203450521" minWidth="0.0" prefWidth="109.33333333333331" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="35.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.666656494140625" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="33.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.666656494140625" minHeight="10.0" prefHeight="30.666656494140625" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="400.0" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <TextField text="1" GridPane.rowIndex="1" />
-                  <TextField prefWidth="132.0" text="2" GridPane.rowIndex="2" />
-                  <TextField text="3" GridPane.rowIndex="3" />
-                  <TextField text="4" GridPane.rowIndex="4" />
-                  <TextField text="5" GridPane.rowIndex="5" />
-                  <TextField text="6" GridPane.rowIndex="6" />
-                  <TextField text="7" GridPane.rowIndex="7" />
-                  <TextField text="8" GridPane.rowIndex="8" />
-                  <TextField text="9" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="400.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
+                  <TextField fx:id="green_id1" editable="false" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="green_name1" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="green_id2" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="green_name2" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="green_id3" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="green_name3" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="green_id4" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="green_name4" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="green_id5" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="green_name5" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <TextField fx:id="green_id6" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="green_name6" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="green_id7" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="green_name7" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField fx:id="green_name8" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField fx:id="green_id8" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="green_id9" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="green_name9" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <TextField fx:id="green_id10" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="green_name10" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <TextField fx:id="green_id11" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="green_name11" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <TextField fx:id="green_id12" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="green_name12" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <TextField fx:id="green_id13" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <TextField fx:id="green_name13" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <TextField fx:id="green_id14" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <TextField fx:id="green_name14" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <TextField fx:id="green_id15" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <TextField fx:id="green_name15" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="1" GridPane.rowIndex="1" />
+                  <TextField editable="false" prefWidth="132.0" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="2" GridPane.rowIndex="2" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="3" GridPane.rowIndex="3" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="4" GridPane.rowIndex="4" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="5" GridPane.rowIndex="5" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="6" GridPane.rowIndex="6" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="7" GridPane.rowIndex="7" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="8" GridPane.rowIndex="8" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="9" GridPane.rowIndex="9" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="10" GridPane.rowIndex="10" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="11" GridPane.rowIndex="11" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="12" GridPane.rowIndex="12" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="13" GridPane.rowIndex="13" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="14" GridPane.rowIndex="14" />
+                  <TextField editable="false" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" text="15" GridPane.rowIndex="15" />
                </children>
             </GridPane>
-            <ImageView layoutX="307.0" layoutY="97.0">
-               <image>
-                  <Image url="@Backgrounds/543c8811e88e3846aa213cada57c279a.png" />
-               </image>
-            </ImageView>
-            <ImageView layoutX="808.0" layoutY="97.0">
-               <image>
-                  <Image url="@Backgrounds/d0072a8e1fc29bc74f716d69d7a31ef1.png" />
-               </image>
-            </ImageView>
+            <Label id="top-label" layoutX="358.0" layoutY="7.0" stylesheets="@paneStyleSheet.css" text="Laser Tag System" textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.04" height="5.84" radius="2.3175" width="5.43">
+                     <color>
+                        <Color red="0.048875000327825546" green="0.008500000461935997" blue="0.17000000178813934" opacity="0.9010152220726013" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Label>
+            <Label id="red-team-label" layoutX="296.0" layoutY="78.0" stylesheets="@paneStyleSheet.css" text="Red Team">
+               <effect>
+                  <Lighting diffuseConstant="1.66" specularConstant="0.25" specularExponent="37.1" surfaceScale="4.71">
+                     <bumpInput>
+                        <Shadow height="165.05" radius="95.1625" width="217.6" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+            <Label id="green-team-label" layoutX="704.0" layoutY="78.0" stylesheets="@paneStyleSheet.css" text="Green Team">
+               <effect>
+                  <Lighting diffuseConstant="1.66" specularConstant="0.25" specularExponent="37.1" surfaceScale="4.71">
+                     <bumpInput>
+                        <Shadow height="165.05" radius="95.1625" width="217.6" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
          </children>
       </Pane>
    </center>
