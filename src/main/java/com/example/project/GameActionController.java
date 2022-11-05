@@ -1,5 +1,9 @@
 package com.example.project;
+<<<<<<< HEAD
 import javafx.application.Platform;
+=======
+
+>>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,15 +13,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+<<<<<<< HEAD
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+=======
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+>>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+<<<<<<< HEAD
 import java.util.Timer;
 import java.util.TimerTask;
 public class GameActionController implements Initializable {
@@ -30,6 +42,11 @@ public class GameActionController implements Initializable {
     private Label label;
     public static Label static_label;
 
+=======
+
+public class GameActionController implements Initializable {
+
+>>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
     PlayerPersistenceInterface persistenceHandler = PersistenceHandler.getInstance();
 
     private Stage stage;
@@ -74,6 +91,7 @@ public class GameActionController implements Initializable {
     private void updateUI(){
 
     }
+<<<<<<< HEAD
     public static void startTimer() {
 
         final int MIN = 6;
@@ -132,6 +150,11 @@ public class GameActionController implements Initializable {
 
         startTimer();
 
+=======
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+>>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
         try {
             searchAllPlayers();
         } catch (SQLException throwable) {
@@ -258,4 +281,8 @@ public class GameActionController implements Initializable {
 
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 763f6ec0c211bf09eff1dbbcc74c608fb66e4e1c
