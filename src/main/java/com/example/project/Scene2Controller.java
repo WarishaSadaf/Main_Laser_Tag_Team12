@@ -1,3 +1,13 @@
+/*
+ * Overview: Implementation for the Scene2Controller class. This class controls
+ *           the second scene presented in the Laser Tag game. This scene shows a Red and Green data entry tables
+ *           with 15 rows each.
+ * Purpose: To collect data from each player. Each table collects a unique ID, a code name, and team color for each player
+ *          User inputs include: ID and code name only. The Team color is automatically collected depending on which table the user is
+ *          putting their information.
+ * @version 1.0
+ * @since 11/04/22
+ * */
 package com.example.project;
 
 import javafx.event.ActionEvent;
