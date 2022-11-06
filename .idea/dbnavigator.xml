@@ -44,6 +44,8 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="54687e89-3218-4fec-9880-d4f2833d0cc2" dataset="public.player" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="81a3b8d5-abc7-45b8-8c42-d9785e2a40b9" dataset="public.green_team" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="81a3b8d5-abc7-45b8-8c42-d9785e2a40b9" dataset="public.red_team" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="81a3b8d5-abc7-45b8-8c42-d9785e2a40b9" dataset="public.playertest" active-filter-id="" />
     <filter-actions connection-id="81a3b8d5-abc7-45b8-8c42-d9785e2a40b9" dataset="public.player" active-filter-id="EMPTY_FILTER" />
   </component>

@@ -1,6 +1,7 @@
 package com.example.project;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,13 +11,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import java.lang.*;
 import java.net.URL;
+import java.util.ResourceBundle;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ResourceBundle;
+
 
 public class Scene2Controller  implements Initializable
 {
@@ -55,7 +59,26 @@ public class Scene2Controller  implements Initializable
     Alert a = new Alert(Alert.AlertType.NONE);
 
     @FXML
-    int addContinue(ActionEvent event) throws  IOException {
+    void button (ActionEvent event) throws IOException
+    {
+        System.out.println("Calling Button");
+        addContinue(event);
+    }
+
+    @FXML
+    void keyEnter(KeyEvent event) throws  IOException
+    {
+        if (event.getCode() == KeyCode.SHIFT)
+        {
+            System.out.println("Calling Enter key");
+            addContinue(event);
+
+        }
+    }
+
+
+    int addContinue(Event event) throws  IOException
+    {
 
         //putting red team data to a Map
         redMap.put((red_id1.getText()), red_name1.getText());
@@ -337,7 +360,7 @@ public class Scene2Controller  implements Initializable
 
         //putting Green team data to a Map
         grnMap.put((green_id1.getText()), green_name1.getText());
-        green_id1.setPromptText("Please insert a valid ID (only Numbers)!!");
+        green_id1.setText("Please insert a valid ID (only Numbers)!!");
 
         if (!((green_id2.getText() == "") || (green_id2.getText().contains(" ")) || (green_id2.getText().isEmpty()) || (green_id2.getText().chars().allMatch(Character::isWhitespace)) || (green_id2.getText().chars().anyMatch(Character::isWhitespace)) ||
                 (green_id2.getText().startsWith(";")) || (green_id2.getText().startsWith(".")) || (green_id2.getText().startsWith("/")) || ((green_id2.getText().startsWith("&"))) || (green_id2.getText().equals(null))))
@@ -652,7 +675,8 @@ public class Scene2Controller  implements Initializable
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
 
     }
 
