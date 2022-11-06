@@ -22,15 +22,16 @@ How To Make Use Of IT?
   3. Run the project/application specifically HelloApplication.java for the game to start.
   4. Wait for the Laser Tag game interface to load.
 
-- for Scene 2
+- for Scene 2(Player Entry Screen)
   
   1. Once you can see the player entry screen, you will be able to move around the application
      either with your mouse or the tab key.
   2. When entering the players, make sure to use the first two Red_player slots since.
   3. There is a maximum of 15 players in each table.
-  4. After entering the players (ID, NAME), you can push the start button or press the Enter key on the keyboard 
-     in order to add the players to the database.
-- 
-- For scene 3
-  1. when you press start game or enter on the keyboard, the third screen will open 
-          with the name of the players in the game and the timer.
+  4. They have to have unique ID
+  4. After entering the players (ID, NAME), you can push the start button or press the R-SHIFT key on the keyboard 
+     in order to add the players to the database and then the Game action display screen with pop up.
+ 
+   
+- For scene 3(Game Action Display) 
+  1. when you press start game, the game will start with the timer. 
