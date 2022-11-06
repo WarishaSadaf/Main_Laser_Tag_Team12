@@ -1,3 +1,14 @@
+/*
+ * Overview: Implementation for GameActionController class. This class controls
+ *           the game action scene presented in the Laser Tag game. This scene shows a Red, Green, and log  tables.
+ *           Additionally, it shows a session timer in the lower-left corner
+ *
+ * Purpose: To display all players from both teams. To keep track of the game's time constrains. The maximum time
+ *          for a game sessions is 6:00 minutes.
+ * @version 1.0
+ * @since 11/04/22
+ * */
+
 package com.example.project;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -201,6 +212,9 @@ public class GameActionController implements Initializable {
     {
 
     }
+
+
+    //TODO: to be implemented in next Sprint
     public void StartGame (ActionEvent event) throws IOException
     {
 //        System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());

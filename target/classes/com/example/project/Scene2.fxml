@@ -22,7 +22,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyEnter" prefHeight="597.0" prefWidth="1141.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyEnter" prefHeight="597.0" prefWidth="1141.0" style="-fx-background-color: #7E8C79;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.Scene2Controller">
    <top>
       <MenuBar prefHeight="0.0" prefWidth="583.0" BorderPane.alignment="CENTER">
          <menus>
@@ -53,7 +53,7 @@
             <Button layoutX="830.0" layoutY="15.0" mnemonicParsing="false" onAction="#ViewGame" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F8 View Game" />
             <Button layoutX="697.0" layoutY="15.0" mnemonicParsing="false" onAction="#FlickSync" prefHeight="24.0" prefWidth="119.0" stylesheets="@buttonStyleSheet.css" text="F10 Flick Sync" />
             <Button layoutX="359.0" layoutY="14.0" mnemonicParsing="false" onAction="#PreEnteredGames" stylesheets="@buttonStyleSheet.css" text="F4 PreEntered Games" />
-            <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#button" prefHeight="24.0" prefWidth="139.0" stylesheets="@buttonStyleSheet.css" text="Start Game ENTER" />
+            <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#button" prefHeight="24.0" prefWidth="154.0" stylesheets="@buttonStyleSheet.css" text="R-SHIFT Start Game " />
          </children>
       </Pane>
    </bottom>
@@ -177,7 +177,7 @@
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="143.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="ID" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="29.0" prefHeight="16.0" prefWidth="400.0" style="-fx-font-family: monospaced; -fx-font-weight: bold;" text="Player" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" />
-                  <TextField fx:id="green_id1" editable="false" onKeyPressed="#keyEnter" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="green_id1" onKeyPressed="#keyEnter" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="green_name1" onKeyPressed="#keyEnter" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <TextField fx:id="green_id2" onKeyPressed="#keyEnter" promptText="Enter Only Numeric Values!" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="green_name2" onKeyPressed="#keyEnter" style="-fx-background-color: trasnparent; -fx-font-family: monospaced; -fx-font-weight: bold; -fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="2" />

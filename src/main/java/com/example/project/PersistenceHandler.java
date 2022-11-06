@@ -2,8 +2,8 @@
  * Overview: Implementation for the Persistence Handler class. Handles
  *           database connections and manages the flow of data in the Java application.
 
- * @version 1.0
- * @since 09/09/22
+ * @version 1.1
+ * @since 11/04/22
  * */
 
 package com.example.project;
@@ -124,8 +124,12 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
     }
 
 
-
-    //Use ResultSet from DB as parameter and set Employee Object's attributes and return player object.
+    /* Uses ResultSet from DB as parameter and sets Player Object's attributes
+     * Adds a player's data to database in green_team Table
+     * @param Resultset representing DB result set
+     * @return a Player obejct
+     *
+     */
     private static Player getPlayerFromResultSet(ResultSet rs) throws SQLException
     {
         Player player = null;
@@ -137,60 +141,67 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
         return player;
     }
 
-    //*************************************
-    //SELECT Players from red_team table
-    //************************************
+
+    /* Executes a SELECT SQL operation against the red_team table. Once it gets the data from BD, it stores it
+     * in a ResultSet object. Finally, it stores the ResultSet into an ObservableList object
+     *
+     *
+     * @return a Player object
+     * @return SQLException if SQL operation fails
+     *
+     */
     public static ObservableList<Player> searchRedPlayers() throws SQLException, ClassNotFoundException {
-        //Execute SELECT statement
         try {
             PreparedStatement selectStatement = connection.prepareStatement(
                     "SELECT * FROM red_team;");
-            //Get ResultSet from dbExecuteQuery method
+
             ResultSet rsPlayers = selectStatement.executeQuery();
-            //Send ResultSet to the getEmployeeList method and get player object
             ObservableList<Player> playerList = getPlayerList(rsPlayers);
-            //Return player object
             return playerList;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
-            //Return exception
             throw e;
         }
     }
 
 
-    //************************************
-    // SELECT Players from green_team table
-    //************************************
+    /* Executes a SELECT SQL operation against the green_team table. Once it gets the data from BD, it stores it
+     * in a ResultSet object. Finally, it stores the ResultSet into an ObservableList object
+     *
+     *
+     * @return a Player object
+     * @return SQLException if SQL operation fails
+     *
+     */
     public static ObservableList<Player> searchGreenPlayers() throws SQLException, ClassNotFoundException {
-        //Execute SELECT statement
         try {
             PreparedStatement selectStatement = connection.prepareStatement(
                     "SELECT * FROM green_team;");
-            //Get ResultSet from dbExecuteQuery method
             ResultSet rsPlayers = selectStatement.executeQuery();
-            //Send ResultSet to the getEmployeeList method and get player object
             ObservableList<Player> playerList = getPlayerList(rsPlayers);
-            //Return player object
             return playerList;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
-            //Return exception
             throw e;
         }
     }
+
+    /* Uses ResultSet from DB to extract Player Object's attributes.
+     * Declare an observable List which comprises Player objects and add Player objects to it
+     *
+     * @param ResultSet representing DB result set
+     * @return  playerList ObservableList<Player> object
+     */
     //Select * from red_team operation
     private static ObservableList<Player> getPlayerList(ResultSet rs) throws SQLException, ClassNotFoundException {
-        //Declare a observable List which comprises of Employee objects
+
         ObservableList<Player> playerList = FXCollections.observableArrayList();
         while (rs.next()) {
             Player player = new Player();
             player.setId(rs.getInt("id"));
             player.setCodename(rs.getString("codename"));
-            //Add player to the ObservableList
             playerList.add(player);
         }
-        //return empList (ObservableList of Employees)
         return playerList;
     }
 }
