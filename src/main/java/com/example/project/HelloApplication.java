@@ -22,9 +22,7 @@ public class HelloApplication extends Application
     {
         Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
-        
         stage.show();
     }
 
