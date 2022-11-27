@@ -41,6 +41,9 @@ public class GameActionController implements Initializable {
 
     static int i;
     static Timer t;
+
+//    static int redScoreV = 0;
+//    static int greenScoreV =0;
     static int dummyTimer = 5;
     static ArrayList<String> actions = new ArrayList<String>();
     @FXML
@@ -147,31 +150,10 @@ public class GameActionController implements Initializable {
     private TableColumn<Player, String>  greenCodeNameColumn;
 
 
-
-
-//    @FXML
-//    void addContinue(ActionEvent event) throws IOException {
-//
-//        System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());
-//
-//        Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-//
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//
-//        scene = new Scene(root);
-//
-//        stage.setScene(scene);
-//
-//        stage.show();
-//
-//        updateUI();
-//    }
-
     private void updateUI(){
 
     }
     public static void startTimer() {
-
         final int MIN = 6;
         final int SEC = 60;
         final int[] num = {MIN};
@@ -187,6 +169,7 @@ public class GameActionController implements Initializable {
                          {
                              public void run()
                              {
+
                                  String c = String.format(num[0] +":"+"%02d",count[0]);
                                  static_label.setText(c);
                                  count[0]--;
@@ -208,8 +191,6 @@ public class GameActionController implements Initializable {
                                  }
 
 
-
-
                              }
                          }
                         );
@@ -217,6 +198,54 @@ public class GameActionController implements Initializable {
         }, 1000, 1000); //Every 1 second
 
     }
+
+    public static void displayActions() {
+        Label labels[];
+
+        labels = new Label[]
+                {
+                        static_action1,static_action2,static_action3,static_action4,static_action5,static_action6,static_action7,static_action8,static_action9,static_action10
+                };
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                Platform.runLater
+                        (new Runnable()
+                         {
+                             public void run()
+                             {
+
+                                 if (i>(actions.size()-1))
+                                 {
+                                     timer.cancel();
+                                 }
+                                 else
+                                 {
+
+                                     System.out.println("FROM SETTINGLABELS: "+i);
+                                     labels[i].setText(actions.get(i));
+//                                     static_redScore.setText(String.valueOf(redScoreV));
+//                                     static_greenScore.setText(String.valueOf(greenScoreV));
+
+                                     i++;
+                                 }
+
+
+
+
+                             }
+                         }
+                        );
+            }
+        }, 1000, 3000); //Every 1 second
+
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -260,6 +289,7 @@ public class GameActionController implements Initializable {
         static_greenScore = greenScore;
         static_greenScore.setText("0000");
 
+//        displayActions();
         startTimer();
 
 
@@ -296,6 +326,14 @@ public class GameActionController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        displayActions();
+
 
     }
     @FXML
@@ -359,7 +397,6 @@ public class GameActionController implements Initializable {
     {
 
     }
-
     @FXML
     public void ViewGame (ActionEvent event) throws IOException {
     }
@@ -471,17 +508,25 @@ public class GameActionController implements Initializable {
                 System.out.println("Actions: "+actions.get(i));
 
             }
-            Label labels[];
-
-            labels = new Label[]
-                    {
-                            static_action1,static_action2,static_action3,static_action4,static_action5,static_action6,static_action7,static_action8,static_action9,static_action10
-                    };
-
-            for (int i=0;i< actions.size();i++)
-            {
-                labels[i].setText(actions.get(i));
+            if(dummyTimer == 0) {
+                // set alert type
+                a.setAlertType(Alert.AlertType.WARNING);
+                // set content text
+                a.setContentText("GAME OVER: All ROUNDS ARE ALREADY PLAYED!!!!\n");
+                // show the dialog
+                a.show();
             }
+//            Label labels[];
+//
+//            labels = new Label[]
+//                    {
+//                            static_action1,static_action2,static_action3,static_action4,static_action5,static_action6,static_action7,static_action8,static_action9,static_action10
+//                    };
+//
+//            for (int i=0;i< actions.size();i++)
+//            {
+//                labels[i].setText(actions.get(i));
+//            }
 //            static_action1.setText(actions.get(0));
 //            static_action2.setText(actions.get(1));
 
@@ -517,8 +562,8 @@ public class GameActionController implements Initializable {
 
     public static void saveInfo()
     {
-        int redScore = 0;
-        int greenScore =0;
+        int redScoreV = 0;
+        int greenScoreV =0;
         int  tmpRScores[] = new int[redPlayerData.size()];
         int  tmpGcores[] = new int[greenPlayerData.size()];
         int counter=0;
@@ -526,14 +571,14 @@ public class GameActionController implements Initializable {
         //SETTING TEAM SCORES
         for (Integer i:RedPlayerScores.values())
         {
-            redScore = redScore + i;
+            redScoreV = redScoreV + i;
             tmpRScores[counter] = i;
             counter++;
         }
         counter = 0;
         for (Integer i:GreenPlayerScores.values())
         {
-            greenScore = greenScore + i;
+            greenScoreV = greenScoreV + i;
             tmpGcores[counter] = i;
             counter++;
         }
@@ -552,20 +597,13 @@ public class GameActionController implements Initializable {
 
         }
 
-
-
-        static_redScore.setText(String.valueOf(redScore));
-        static_greenScore.setText(String.valueOf(greenScore));
-
-
-
-
+        static_redScore.setText(String.valueOf(redScoreV));
+        static_greenScore.setText(String.valueOf(greenScoreV));
 
     }
 
     public void PreEnteredGames (ActionEvent event) throws IOException
     {
-
     }
     public void FlickSync (ActionEvent event) throws IOException
     {
