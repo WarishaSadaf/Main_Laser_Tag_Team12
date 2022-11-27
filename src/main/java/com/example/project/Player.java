@@ -7,33 +7,17 @@ import javafx.beans.property.StringProperty;
 
 public class Player {
 
-    //private String id;
-    //private String codename;
 
     private IntegerProperty id;
     private StringProperty codename;
 
+    private int score;
 
-    /*public Player(int id, String codename) {
-        this.id = id;
-        this.codename = codename;
-    }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getCodename() {
-        return codename;
-    }
-
-    @Override
-    public String toString() {
-        return " with ID: " + id + " got codename: " + codename;
-    }*/
     public Player() {
         this.id = new SimpleIntegerProperty();
         this.codename = new SimpleStringProperty();
+        this.score = 0;
     }
 
     //player_id
@@ -46,6 +30,8 @@ public class Player {
     public IntegerProperty idProperty(){
         return id;
     }
+
+    public int getScore(){return score;};
     //Player_Codename
     public String getCodename () {
         return codename.get();
@@ -56,5 +42,9 @@ public class Player {
     public StringProperty codenameProperty() {
         return codename;
     }
+
+    public void setScore(int score){this.score = score;};
+
+
 }
 

@@ -9,10 +9,12 @@
 
 package com.example.project;
 
+import javafx.collections.ObservableList;
+
 public abstract class PlayerPersistenceInterface
 {
 
-        public String getPlayers() {
+        public static ObservableList<Player> getGreenTeamPlayer(int playerId) {
                 return null;
         }
 
@@ -23,6 +25,20 @@ public abstract class PlayerPersistenceInterface
         public boolean createGreenPlayer(Player player) {
                 return false;
         }
+
+        /*
+         * Delete all the rows in red_team Table
+         * @return FALSE if data deletion failed
+         * @return TRUE if data deletion was successful
+         */
+        public abstract boolean deletingAllRows_Red();
+
+        /*
+         * Delete all the rows in green_team Table
+         * @return FALSE if data deletion failed
+         * @return TRUE if data deletion was successful
+         */
+        public abstract boolean deletingAllRows_Green();
 
         /*
          * Adds a player's data to database

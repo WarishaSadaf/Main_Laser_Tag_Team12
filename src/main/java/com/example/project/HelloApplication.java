@@ -6,14 +6,11 @@
 
 // Importing packages
 package com.example.project;
-import java.lang.*;
 import javafx.application.Application;
 import javafx.application.Preloader;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class HelloApplication extends Application
@@ -49,5 +46,8 @@ public class HelloApplication extends Application
 
         System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());
         launch(args);
+
+        System.out.println("From HelloApplication Class");
+
     }
 }

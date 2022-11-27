@@ -39,11 +39,13 @@ public class Scene2Controller  implements Initializable
 
     private Stage stage;
 
-    private Scene scene;
+    private static Scene scene;
 
     Map<String, String> redMap = new HashMap<String, String>();
 
     Map<String, String> grnMap = new HashMap<String, String>();
+
+
 
     @FXML
     private TextField red_id1, red_id2,red_id3,red_id4,red_id5,red_id6,red_id7,

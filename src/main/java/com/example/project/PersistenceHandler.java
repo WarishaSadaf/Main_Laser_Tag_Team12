@@ -26,7 +26,7 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
     private int port = 5432;
     private String databaseName = "dc62tnlursroj2";
 
-    private static Connection connection = null;
+    public static Connection connection = null;
 
     private PersistenceHandler(){
         initializePostgresqlDatabase();
@@ -62,23 +62,48 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
      * @return a String containing the player's name and ID
      * @return NULL if no record found
      */
-    @Override
-    //public List<Player> getPlayers() {
-    public String getPlayers() {
-        String sql = "SELECT id, codename "
-                + "FROM player "
-                + "WHERE id = ?";
+    public static ObservableList<Player> getGreenTeamPlayer(int playerId) {
+        ObservableList<Player> playerList = null;
         try {
+            String sql = "SELECT id, codename "
+                    + "FROM green_team "
+                    + "WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1,playerId);
             ResultSet sqlReturnValues = stmt.executeQuery();
-
-            if (sqlReturnValues != null){
-                return sqlReturnValues.toString();
+            if(sqlReturnValues != null) {
+                playerList = getPlayerList(sqlReturnValues);
             }
-        } catch (SQLException throwable) {
+
+        } catch (SQLException | ClassNotFoundException throwable) {
             throwable.printStackTrace();
         }
-        return null;
+        return playerList;
+    }
+
+
+    /*
+     * Retrieves a player's data from database
+     * @return a String containing the player's name and ID
+     * @return NULL if no record found
+     */
+    public static ObservableList<Player> getRedTeamPlayer(int playerId) {
+        ObservableList<Player> playerList = null;
+        try {
+            String sql = "SELECT id, codename "
+                    + "FROM red_team "
+                    + "WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1,playerId);
+            ResultSet sqlReturnValues = stmt.executeQuery();
+            if(sqlReturnValues != null) {
+                playerList = getPlayerList(sqlReturnValues);
+            }
+
+        } catch (SQLException | ClassNotFoundException throwable) {
+            throwable.printStackTrace();
+        }
+        return playerList;
     }
 
     /*
@@ -203,5 +228,44 @@ public class PersistenceHandler extends PlayerPersistenceInterface {
             playerList.add(player);
         }
         return playerList;
+    }
+
+    /*
+     * Delete all the rows in red_team Table
+     * @return FALSE if data deletion failed
+     * @return TRUE if data deletion was successful
+     */
+    @Override
+    public boolean deletingAllRows_Red()  {
+        try {
+            PreparedStatement truncateStatement = connection.prepareStatement(
+                    "Truncate table red_team;");
+
+            truncateStatement.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+
+    /*
+     * Delete all the rows in green_team Table
+     * @return FALSE if data deletion failed
+     * @return TRUE if data deletion was successful
+     */
+    @Override
+    public boolean deletingAllRows_Green()  {
+        try {
+            PreparedStatement truncateStatement = connection.prepareStatement(
+                    "Truncate table green_team;");
+
+            truncateStatement.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

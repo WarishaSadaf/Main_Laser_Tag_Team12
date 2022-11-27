@@ -3,12 +3,6 @@
  */
 
 package com.example.project;
-import java.net.URL;
-import java.util.*;
-import java.lang.*;
-
-import javafx.application.Platform;
-import javafx.application.Preloader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +12,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class HelloController implements Initializable
 {
@@ -51,6 +44,8 @@ public class HelloController implements Initializable
     {
         label = progress;
         statProgressBar = progressBar;
+
+
     }
 
 
@@ -66,6 +61,7 @@ public class HelloController implements Initializable
         stage.setScene(scene);
 
         stage.show();
+
 
     }
 
