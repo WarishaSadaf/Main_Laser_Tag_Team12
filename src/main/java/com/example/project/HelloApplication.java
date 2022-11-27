@@ -13,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 public class HelloApplication extends Application
 {
     private static final int COUNT_LIMIT = 10;
@@ -40,13 +42,29 @@ public class HelloApplication extends Application
     }
 
     // the main method calling the preloader
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws SQLException { PersistenceHandler persistenceHandler = PersistenceHandler.getInstance();
+        try {
+            if (persistenceHandler.deletingAllRows_Green()) {
+                System.out.println("Green Player deleted from database!!");
+            } else {
+                System.out.println("Error while deleting player into database!!");
+            }
 
-        System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());
-        launch(args);
+            if (persistenceHandler.deletingAllRows_Red()) {
+                System.out.println("Red Player deleted into database!!");
+            } else {
+                System.out.println("Error while deleting player into database!!");
+            }
 
-        System.out.println("From HelloApplication Class");
+            //PersistenceHandler.connection.close();
+            System.setProperty("javafx.preloader", HelloPreloader.class.getCanonicalName());
+            launch(args);
+
+            System.out.println("From HelloApplication Class");
+            PersistenceHandler.connection.close();
+        }finally {
+            PersistenceHandler.connection.close();
+        }
 
     }
 }
