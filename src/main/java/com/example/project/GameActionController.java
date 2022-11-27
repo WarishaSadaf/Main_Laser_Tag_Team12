@@ -23,8 +23,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import javafx.scene.text.Text;
+
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -39,7 +47,9 @@ public class GameActionController implements Initializable {
 
     @FXML
     private Label label;
+    private Text text;
     public static Label static_label;
+    public static Text static_text;
 
     PlayerPersistenceInterface persistenceHandler = PersistenceHandler.getInstance();
 
@@ -103,7 +113,11 @@ public class GameActionController implements Initializable {
                              public void run()
                              {
                                  String c = String.format(num[0] +":"+"%02d",count[0]);
+
                                  static_label.setText(c);
+//                                 static_text = new Text();
+//                                 static_text.setText(" Game time ");
+
                                  count[0]--;
 
                                  if (count[0] == 0 && num[0] !=0)
@@ -119,7 +133,10 @@ public class GameActionController implements Initializable {
                                  if (count[0] == 29 && num[0] == 0)
                                  {
                                      //ALERT: Time's running out
+
                                      static_label.setTextFill(Color.RED);
+
+
                                  }
 
 
@@ -133,15 +150,74 @@ public class GameActionController implements Initializable {
 
     }
 
+
+    public static void startTimer2() {
+
+        final int MIN = 0;
+        final int SEC = 30;
+        final int[] num = {MIN};
+        Timer timer = new Timer();
+        final int[] count = {SEC};
+        timer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                Platform.runLater
+                        (new Runnable()
+                         {
+                             public void run()
+                             {
+                                 String c = String.format(num[0] +":"+"%02d",count[0]);
+                                 static_label.setText(c);
+                                 count[0]--;
+
+//                                 if (count[0] == 0 && num[0] !=0)
+//                                 {
+//                                     num[0]--;
+//                                     count[0] = SEC;
+//                                 }
+                                 if (count[0] < 0 && num[0] == 0)
+                                 {
+                                     System.out.println("Game starting !!!");
+                                     timer.cancel();
+                                 }
+                                 if (count[0] == 00 && num[0] == 0)
+                                 {
+                                     startTimer();
+
+                                     //ALERT: Time's running out
+
+                                     static_label.setTextFill(Color.RED);
+
+
+                                 }
+
+
+
+
+                             }
+                         }
+                        );
+            }
+        }, 1000, 1000); //Every 1 second
+
+    }
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
 
         static_label = label;
 
+
         static_label.setText("");
 
-        startTimer();
+        startTimer2();
+        //startTimer();
 
         try {
             searchAllPlayers();
