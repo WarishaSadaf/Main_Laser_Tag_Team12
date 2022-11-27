@@ -71,7 +71,7 @@
                </effect>
             </TableView>
             <Label id="time-label" fx:id="label" layoutX="201.0" layoutY="455.0" prefHeight="16.0" prefWidth="129.0" stylesheets="@paneStyleSheet.css" text="6:00" textFill="WHITE" />
-            <Text fill="WHITE" layoutX="109.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;Monospaced&quot;; -fx-font-size: 15; -fx-font-weight: bold;" text="Game Time:" wrappingWidth="93.39926147460938" />
+            <Text fill="WHITE" layoutX="109.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;Monospaced&quot;; -fx-font-size: 15; -fx-font-weight: bold;" text=" Loading..." wrappingWidth="93.39926147460938" />
          </children>
       </Pane>
    </left>
